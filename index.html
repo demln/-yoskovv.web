@@ -1,356 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
+  <title>Ленддинг</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой сайт</title>
-  <style>
-    /* Базовые стили и темная тема */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: #eee;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #ff00ff;
-    }
-
-    header {
-      background: linear-gradient(90deg, #111, #222);
-      padding: 40px 0px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 10x;
-      color: #00ffff;
-    }
-
-    header p {
-      font-size: 1.2em;
-      color: #ccc;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #00ffff;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      background: #222;
-      padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-
-    .project-card:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #333;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 5px;
-      background: #222;
-      color: #eee;
-    }
-
-    .contact-form button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background: #00ffff;
-      color: #111;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background: #ff00ff;
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-</body><!-- Стильная плавающая кнопка Telegram -->
-<a href="https://t.me/swagatest_bot" target="_blank" class="tg-style-btn" aria-label="Telegram Bot">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="22" height="22">
-    <path d="M9.999 16.714l-.417 3.814c.598 0 .86-.256 1.175-.565l2.824-2.62 5.845 4.275c1.068.588 1.828.28 2.107-1.004l3.815-18.035c.366-1.657-.602-2.33-1.55-1.93L1.837 9.43c-1.593.62-1.574 1.504-.273 1.937l4.625 1.44L17.78 5.114c.474-.27.906-.123.551.171L9.999 16.714z"/>
-  </svg>
-</a>
+<body>
 
-<style>
-/* Стильная плавающая кнопка Telegram */
-.tg-style-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(145deg, #00cfff, #0080ff);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-  z-index: 9999;
-  animation: pulse 2.5s infinite;
-}
-.tg-style-btn:hover {
-  transform: scale(1.2);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-}
-.tg-style-btn svg {
-  display: block;
-  width: 22px;
-  height: 22px;
-  fill: #fff;
-}
-
-/* Анимация пульса */
-@keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 6px 12px rgba(0,0,0,0.4); }
-  50% { transform: scale(1.1); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-  100% { transform: scale(1); box-shadow: 0 6px 12px rgba(0,0,0,0.4); }
-}
-</style>
-
-
-<style>
-.telegram-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #333;  /* темно-серый фон */
-  padding: 10px;
-  border-radius: 50%;      /* круглая кнопка */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s, background-color 0.3s;
-  z-index: 1000;
-}
-.telegram-icon:hover {
-  background-color: #555; /* чуть светлее при наведении */
-  transform: scale(1.1);
-}
-.telegram-icon svg {
-  display: block;
-  width: 20px;
-  height: 20px;
-  fill: #ccc; /* светло-серый цвет иконки */
-}
-</style>
-
-
-
-<style>
-  .telegram-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    /* темно-серый фон */
-    padding: 10px;
-    border-radius: 50%;
-    /* круглая кнопка */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s, background-color 0.3s;
-    z-index: 1000;
-  }
-
-  .telegram-icon:hover {
-    background-color: #555;
-    /* чуть светлее при наведении */
-    transform: scale(1.1);
-  }
-
-  .telegram-icon svg {
-    display: block;
-    width: 20px;
-    height: 20px;
-    fill: #ccc;
-    /* светло-серый цвет иконки */
-  }
-</style>
-
-
-<style>
-  .telegram-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    /* темно-серый фон */
-    padding: 10px;
-    border-radius: 50%;
-    /* круглая кнопка */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s, background-color 0.3s;
-    z-index: 1000;
-  }
-
-  .telegram-icon:hover {
-    background-color: #555;
-    /* чуть светлее при наведении */
-    transform: scale(1.1);
-  }
-
-  .telegram-icon svg {
-    display: block;
-    width: 20px;
-    height: 20px;
-    fill: #ccc;
-    /* светло-серый цвет иконки */
-  }
-</style>
-
-
-
-<style>
-  /* Стили плавающей кнопки */
-  .telegram-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #00ffff;
-    color: #111;
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 18px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, background-color 0.3s;
-    z-index: 1000;
-  }
-
-  .telegram-widget:hover {
-    background-color: #ff00ff;
-    transform: scale(1.1);
-    color: #fff;
-  }
-
-  .telegram-widget svg {
-    display: inline-block;
-  }
-</style>
-
-
-
-<style>
-  /* Стили плавающей кнопки */
-  .telegram-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #00ffff;
-    color: #111;
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 18px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, background-color 0.3s;
-    z-index: 1000;
-  }
-
-  .telegram-widget:hover {
-    background-color: #ff00ff;
-    transform: scale(1.1);
-    color: #fff;
-  }
-
-  .telegram-widget svg {
-    display: inline-block;
-  }
-</style>
-
-
-<!-- Главный баннер -->
 <header>
-  <h1>Привет, я yoskovv</h1>
-  <p>я учусь создавать сайты</p>
+  <div class="nav">
+    <div class="logo"></div>
+    <nav class="menu">
+      <a href="#services">Наши услуги</a>
+      <a href="#contact">Связь с нами</a>
+    </nav>
+  </div>
 </header>
 
-<!-- О себе -->
-<section id="about">
-  <h2>О себе</h2>
-  <p>Я новичок в разработке сайтов, и пока что только учусь.</p>
+<section class="hero animate">
+  <div class="hero-content"></div>
 </section>
 
-<!-- Контакты и связь -->
-<section id="contact">
-  <h2>Контакты</h2>
-  <p>Свяжитесь со мной через форму ниже или в Telegram:</p>
-  <a href="https://t.me/yoskovv" target="_blank"
-    style="display:inline-flex; align-items:center; gap:10px; margin-bottom:20px; color:#00ffff; font-weight:bold; text-decoration:none;">
-    <!-- Иконка Telegram SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00ffff" viewBox="0 0 24 24">
-      <path
-        d="M9.999 16.714l-.417 3.814c.598 0 .86-.256 1.175-.565l2.824-2.62 5.845 4.275c1.068.588 1.828.28 2.107-1.004l3.815-18.035c.366-1.657-.602-2.33-1.55-1.93L1.837 9.43c-1.593.62-1.574 1.504-.273 1.937l4.625 1.44L17.78 5.114c.474-.27.906-.123.551.171L9.999 16.714z" />
-    </svg>
-    @yoskovv
-  </a>
-
-  <form class="contact-form">
-    <input type="text" placeholder="Ваше имя" required>
-    <input type="email" placeholder="Ваш Email" required>
-    <textarea rows="5" placeholder="Сообщение" required></textarea>
-    <button type="submit">Отправить</button>
-  </form>
+<section id="services" class="section animate">
+  <div class="services">
+    <div class="service">Услуга 1</div>
+    <div class="service">Услуга 2</div>
+    <div class="service">Услуга 3</div>
+  </div>
 </section>
 
+<section id="contact" class="section contact animate">
+  <h2>Связь с нами</h2>
+  <div class="messengers">
+    <a href="https://t.me/YOUR_TELEGRAM" target="_blank" class="animate">
+      <img src="images/telegram.png" alt="Telegram">
+    </a>
+    <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="animate">
+      <img src="images/whatsapp.png" alt="WhatsApp">
+    </a>
+  </div>
+</section>
 
 <footer>
-  <p>&copy; 2026 yoskovv. Все права защищены.</p>
+  <p>by yoskovv - <a href="https://t.me/yoskovv" target="_blank">@yoskovv</a></p>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
-
 </html>
